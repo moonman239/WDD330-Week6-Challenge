@@ -8,6 +8,7 @@ export class TaskView extends React.Component
             completed: false
         };
     }
+    // When a task is completed, add a strikethrough.
     completedClicked = () => this.setState(
         {
             completed: !(this.state.completed)
@@ -17,9 +18,7 @@ export class TaskView extends React.Component
     {
         const jsx = <div>
             <input type="checkbox" onClick={this.completedClicked}></input>
-            {this.state.completed ? "<u>" : ""}
-            Task
-            {this.state.completed ? "</u>" : ""}
+            {this.state.completed ? <strike>Task</strike> : "Task"}
             <button>X</button>
         </div>;
         return jsx;
