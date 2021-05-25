@@ -19,24 +19,8 @@ export class TaskView extends React.Component
         const jsx = <div>
             <input type="checkbox" onClick={this.completedClicked}></input>
             {this.state.completed ? <strike>{this.props.name}</strike> : this.props.name}
-            <button>X</button>
+            <button onClick={this.props.onRemoveButtonClick}>X</button>
         </div>;
         return jsx;
     }
-}
-
-export function showTasks(taskList)
-{
-    let children = [];
-    for (const i in taskList)
-    {
-        let child = <tr><td><TaskView index={i} name={taskList[i]}></TaskView></td></tr>;
-        children.push(child);
-    }
-    let table = <table>
-        <tbody>
-            {children}
-        </tbody>
-    </table>;
-    return table;
 }
