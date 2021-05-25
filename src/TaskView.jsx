@@ -14,7 +14,7 @@ export class TaskView extends React.Component
         this.props.task.completed = !this.props.task.completed;
         this.setState(
         {
-            completed: !(this.state.completed)
+            completed: this.props.task.completed
         });
     }
     render()

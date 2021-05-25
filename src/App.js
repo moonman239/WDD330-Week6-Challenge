@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import {TaskView} from './TaskView'
 import React from 'react';
-
+var tasks = [];
 class App extends React.Component
 {
   constructor()
@@ -13,23 +13,23 @@ class App extends React.Component
       criteria: "All"
     }
   }
-  addTask = () => {this.setState({
-    tasks: this.state.tasks.concat([
+  addTask = () => {
+    tasks.push(
       {name: document.getElementById("taskTextbox").value,
       completed: false
-      }]),
+      });
+    this.setState({
+    tasks:tasks,
     criteria: this.state.criteria
   });
   document.getElementById("taskTextbox").value = "";
 }
 removeTask = (taskIndex) => {
+  tasks = tasks.filter((x,index) => index !== parseInt(taskIndex));
   this.setState({
-  tasks:this.state.tasks.filter((x,index) => index !== parseInt(taskIndex)),
+  tasks:tasks,
   criteria: this.state.criteria
 });
-}
-taskCompleted = (event) => {
-  
 }
 showTasks(taskList)
 {
