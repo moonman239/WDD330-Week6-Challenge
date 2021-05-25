@@ -19,7 +19,7 @@ export class TaskView extends React.Component
     }
     render()
     {
-        const jsx = <div>
+        const jsx = <div className="task">
             <input type="checkbox" onClick={this.completedClicked}></input>
             {this.state.shouldStrikethrough ? <strike>{this.props.task.name}</strike> : this.props.task.name}
             <button onClick={x=>this.props.onRemoveButtonClick(this.props.index)}>X</button>
