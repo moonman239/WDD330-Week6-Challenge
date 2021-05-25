@@ -28,6 +28,6 @@ export class TaskListView extends React.Component
 {
     render()
     {
-        
+        return <table></table>
     }
 }
