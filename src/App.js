@@ -5,13 +5,22 @@ import React from 'react';
 
 class App extends React.Component
 {
-
+  constructor()
+  {
+    super();
+    this.state = {
+      tasks: []
+    }
+  }
+  addTask = () => this.setState({
+    tasks: this.state.tasks.concat([document.getElementById("taskTextbox").value])
+  })
   render()
   {
     const jsx = 
     <div>
-      {showTasks(["hi"])}
-      <input type="text"></input><button>+</button>
+      {showTasks(this.state.tasks)}
+      <input type="text" id="taskTextbox"></input><button onClick={this.addTask}>+</button>
     </div>
     return jsx;
   }
