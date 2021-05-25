@@ -9,13 +9,14 @@ export class TaskView extends React.Component
         };
     }
     // When a task is completed, add a strikethrough.
-    completedClicked = () => 
-    {this.setState(
+    completedClicked = () =>
+    {
+        this.props.task.completed = !this.props.task.completed;
+        this.setState(
         {
             completed: !(this.state.completed)
-        }
+        });
     }
-    );
     render()
     {
         const jsx = <div>
