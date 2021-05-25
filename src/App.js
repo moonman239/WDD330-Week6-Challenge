@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 import {TaskView} from './TaskView'
 import React from 'react';
@@ -44,7 +44,7 @@ showTasks(taskList)
     let children = [];
     for (const i in taskList)
     {
-        let child = <tr><td><TaskView index={i} onRemoveButtonClick={this.removeTask} task={taskList[i]}></TaskView></td></tr>;
+        let child = <TaskView index={i} onRemoveButtonClick={this.removeTask} task={taskList[i]}></TaskView>;
         children.push(child);
     }
     let table = <table>
