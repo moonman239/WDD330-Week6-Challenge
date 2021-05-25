@@ -24,3 +24,10 @@ export class TaskView extends React.Component
         return jsx;
     }
 }
+export class TaskListView extends React.Component
+{
+    render()
+    {
+        
+    }
+}
