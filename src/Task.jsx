@@ -24,19 +24,4 @@ export class TaskView extends React.Component
         return jsx;
     }
 }
-
-export function showTasks(taskList)
-{
-    let children = [];
-    for (const i in taskList)
-    {
-        let child = <tr><td><TaskView name={taskList[i]}></TaskView></td></tr>;
-        children.push(child);
-    }
-    let table = <table>
-        <tbody>
-            {children}
-        </tbody>
-    </table>;
-    return table;
 }
