@@ -12,9 +12,11 @@ class App extends React.Component
       tasks: []
     }
   }
-  addTask = () => this.setState({
+  addTask = () => {this.setState({
     tasks: this.state.tasks.concat([document.getElementById("taskTextbox").value])
-  })
+  });
+  document.getElementById("taskTextbox").value = "";
+}
   render()
   {
     const jsx = 
