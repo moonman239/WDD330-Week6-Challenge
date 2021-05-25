@@ -4,6 +4,11 @@ body {
 h1 {
   text-align: center;
 }
+#App {
+  position: absolute;
+  left: 60px;
+  right: 30px;
+}
 .task {
   border: 1px solid black;
 }
