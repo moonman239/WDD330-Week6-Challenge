@@ -36,7 +36,7 @@ showTasks(taskList)
     let children = [];
     for (const i in taskList)
     {
-        let child = <tr><td><TaskView index={i} onRemoveButtonClick={this.removeTask} name={taskList[i].name}></TaskView></td></tr>;
+        let child = <tr><td><TaskView index={i} onRemoveButtonClick={this.removeTask} task={taskList[i]}></TaskView></td></tr>;
         children.push(child);
     }
     let table = <table>
