@@ -17,15 +17,18 @@ class App extends React.Component
   });
   document.getElementById("taskTextbox").value = "";
 }
-removeTask = () => this.setState({
-  tasks:this.state.tasks.slice(0,this.state.tasks.length - 1)
-})
+removeTask = (event) => {
+  console.log(event.target);
+  this.setState({
+  tasks:this.state.tasks.filter((x,index) => index !== parseInt(event.target.id))
+});
+}
 showTasks(taskList)
 {
     let children = [];
     for (const i in taskList)
     {
-        let child = <tr><td><TaskView onRemoveButtonClick={this.removeTask} name={taskList[i]}></TaskView></td></tr>;
+        let child = <tr><td><TaskView index={i} onRemoveButtonClick={this.removeTask} name={taskList[i]}></TaskView></td></tr>;
         children.push(child);
     }
     let table = <table>
