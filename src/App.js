@@ -3,6 +3,7 @@ import './App.css';
 import {TaskView} from './TaskView'
 import React from 'react';
 var tasks = [];
+
 class App extends React.Component
 {
   constructor()
@@ -58,6 +59,7 @@ showTasks(taskList)
   {
     const jsx = 
     <div>
+      <h1>Todos</h1>
       {this.showTasks(this.state.tasks)}
       <input type="text" id="taskTextbox"></input><button onClick={this.addTask}>+</button>
       <button onClick={this.showOnlyCompleted}>Completed</button>
