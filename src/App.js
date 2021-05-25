@@ -16,19 +16,26 @@ class App extends React.Component
   addTask = () => {
     tasks.push(
       {name: document.getElementById("taskTextbox").value,
-      completed: false
+      completed: false,
+      criteria: this.state.criteria
       });
     this.setState({
     tasks:tasks,
-    criteria: this.state.criteria
+    criteria:this.state.criteria
   });
+
   document.getElementById("taskTextbox").value = "";
 }
 removeTask = (taskIndex) => {
   tasks = tasks.filter((x,index) => index !== parseInt(taskIndex));
   this.setState({
   tasks:tasks,
-  criteria: this.state.criteria
+  criteria:this.state.criteria
+});
+}
+showOnlyCompleted = () => {
+  this.setState({
+  tasks:tasks.filter(task => task.completed)
 });
 }
 showTasks(taskList)
@@ -53,9 +60,8 @@ showTasks(taskList)
     <div>
       {this.showTasks(this.state.tasks)}
       <input type="text" id="taskTextbox"></input><button onClick={this.addTask}>+</button>
+      <button onClick={this.showOnlyCompleted}>Completed</button>
     </div>
-    // Add removal function to X buttons.
-    const removeButtons = jsx
     return jsx;
   }
 }
