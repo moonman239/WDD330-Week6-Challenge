@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import {TaskView,showTasks} from './Task'
+import {TaskView} from './TaskView'
 import React from 'react';
 
 class App extends React.Component
@@ -17,13 +17,30 @@ class App extends React.Component
   });
   document.getElementById("taskTextbox").value = "";
 }
+showTasks(taskList)
+{
+    let children = [];
+    for (const i in taskList)
+    {
+        let child = <tr><td><TaskView index={i} name={taskList[i]}></TaskView></td></tr>;
+        children.push(child);
+    }
+    let table = <table>
+        <tbody>
+            {children}
+        </tbody>
+    </table>;
+    return table;
+  }
   render()
   {
     const jsx = 
     <div>
-      {showTasks(this.state.tasks)}
+      {this.showTasks(this.state.tasks)}
       <input type="text" id="taskTextbox"></input><button onClick={this.addTask}>+</button>
     </div>
+    // Add removal function to X buttons.
+    const removeButtons = jsx
     return jsx;
   }
 }
