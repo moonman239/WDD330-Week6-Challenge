@@ -22,12 +22,14 @@ class App extends React.Component
   });
   document.getElementById("taskTextbox").value = "";
 }
-removeTask = (event) => {
-  console.log(event.target);
+removeTask = (taskIndex) => {
   this.setState({
-  tasks:this.state.tasks.filter((x,index) => index !== parseInt(event.target.id)),
-  criteria:this.state.criteria
+  tasks:this.state.tasks.filter((x,index) => index !== parseInt(taskIndex)),
+  criteria: this.state.criteria
 });
+}
+taskCompleted = (event) => {
+  
 }
 showTasks(taskList)
 {

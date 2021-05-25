@@ -19,7 +19,7 @@ export class TaskView extends React.Component
         const jsx = <div>
             <input type="checkbox" onClick={this.completedClicked}></input>
             {this.state.completed ? <strike>{this.props.name}</strike> : this.props.name}
-            <button id={this.props.index} onClick={this.props.onRemoveButtonClick}>X</button>
+            <button onClick={x=>this.props.onRemoveButtonClick(this.props.index)}>X</button>
         </div>;
         return jsx;
     }
