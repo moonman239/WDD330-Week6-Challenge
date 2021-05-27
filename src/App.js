@@ -39,6 +39,11 @@ showOnlyCompleted = () => {
   tasks:tasks.filter(task => task.completed)
 });
 }
+showAll = () => {
+  this.setState({
+    tasks: tasks
+  })
+}
 showTasks(taskList)
 {
     let children = [];
@@ -62,7 +67,7 @@ showTasks(taskList)
       <h1>Todos</h1>
       {this.showTasks(this.state.tasks)}
       <input type="text" id="taskTextbox"></input><button onClick={this.addTask}>+</button>
-      <button onClick={this.showOnlyCompleted}>Completed</button>
+      <button onClick={this.showAll}>All</button><button onClick={this.showOnlyCompleted}>Completed</button>
     </div>
     return jsx;
   }
