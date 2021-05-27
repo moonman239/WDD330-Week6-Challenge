@@ -14,14 +14,11 @@ export class TaskView extends React.Component
     completedClicked = () =>
     {
         this.props.task.completed = !this.props.task.completed;
-        this.setState(
-        {
-            shouldStrikethrough: this.props.task.completed
-        });
+        this.forceUpdate();
     }
     render()
     {
-        let completed = this.state.shouldStrikethrough || this.props.task.completed;
+        let completed = this.props.task.completed;
         console.log("Completed " + completed);
         const jsx = <tr className="task"><td>
             <input type="checkbox" checked={completed} onClick={this.completedClicked}></input></td>
