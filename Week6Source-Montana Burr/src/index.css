@@ -1,0 +1,18 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+h1 {
+  text-align: center;
+}
+#App {
+  position: absolute;
+  left: 60px;
+  right: 30px;
+}
+.task {
+  border: 1px solid black;
+}
+.task button {
+  position: absolute;
+  right: 0px;
+}

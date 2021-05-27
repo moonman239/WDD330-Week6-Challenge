@@ -4,11 +4,6 @@ export class TaskView extends React.Component
     constructor(props)
     {
         super(props);
-        this.state = {
-            shouldStrikethrough: this.props.task.completed
-        };
-        console.log("Initializing with task " + this.props.task.name);
-        console.assert(this.state.shouldStrikethrough === this.props.task.completed);
     }
     // When a task is completed, add a strikethrough.
     completedClicked = () =>
@@ -21,11 +16,16 @@ export class TaskView extends React.Component
     }
     render()
     {
-        let completed = this.state.shouldStrikethrough || this.props.task.completed;
-        console.log("Completed " + completed);
+        if (this.props.task.completed)
+        {
+        this.setState({
+            shouldStrikethrough: true
+        });
+    };
+        console.assert(!(this.props.task.completed === true && this.state.shouldStrikethrough === false));
         const jsx = <tr className="task"><td>
             <input type="checkbox" onClick={this.completedClicked}></input></td>
-            <td>{completed ? <strike>{this.props.task.name}</strike> : this.props.task.name}</td>
+            <td>{this.state.shouldStrikethrough ? <strike>{this.props.task.name}</strike> : this.props.task.name}</td>
             <td><button onClick={x=>this.props.onRemoveButtonClick(this.props.index)}>X</button></td>
         </tr>;
         return jsx;
