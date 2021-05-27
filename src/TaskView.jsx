@@ -24,7 +24,7 @@ export class TaskView extends React.Component
         let completed = this.state.shouldStrikethrough || this.props.task.completed;
         console.log("Completed " + completed);
         const jsx = <tr className="task"><td>
-            <input type="checkbox" onClick={this.completedClicked}></input></td>
+            <input type="checkbox" checked={completed} onClick={this.completedClicked}></input></td>
             <td>{completed ? <strike>{this.props.task.name}</strike> : this.props.task.name}</td>
             <td><button onClick={x=>this.props.onRemoveButtonClick(this.props.index)}>X</button></td>
         </tr>;
