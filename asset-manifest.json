@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/WDD330-Week6-Challenge/static/css/main.7099f577.chunk.css",
+    "main.js": "/WDD330-Week6-Challenge/static/js/main.57e7a77d.chunk.js",
+    "main.js.map": "/WDD330-Week6-Challenge/static/js/main.57e7a77d.chunk.js.map",
+    "runtime-main.js": "/WDD330-Week6-Challenge/static/js/runtime-main.ac444c4a.js",
+    "runtime-main.js.map": "/WDD330-Week6-Challenge/static/js/runtime-main.ac444c4a.js.map",
+    "static/js/2.7b1cb5f6.chunk.js": "/WDD330-Week6-Challenge/static/js/2.7b1cb5f6.chunk.js",
+    "static/js/2.7b1cb5f6.chunk.js.map": "/WDD330-Week6-Challenge/static/js/2.7b1cb5f6.chunk.js.map",
+    "static/js/3.e54ccf98.chunk.js": "/WDD330-Week6-Challenge/static/js/3.e54ccf98.chunk.js",
+    "static/js/3.e54ccf98.chunk.js.map": "/WDD330-Week6-Challenge/static/js/3.e54ccf98.chunk.js.map",
+    "index.html": "/WDD330-Week6-Challenge/index.html",
+    "static/css/main.7099f577.chunk.css.map": "/WDD330-Week6-Challenge/static/css/main.7099f577.chunk.css.map",
+    "static/js/2.7b1cb5f6.chunk.js.LICENSE.txt": "/WDD330-Week6-Challenge/static/js/2.7b1cb5f6.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ac444c4a.js",
+    "static/js/2.7b1cb5f6.chunk.js",
+    "static/css/main.7099f577.chunk.css",
+    "static/js/main.57e7a77d.chunk.js"
+  ]
+}
